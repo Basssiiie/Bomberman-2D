@@ -77,8 +77,8 @@ public class Bomb : MonoBehaviour
 
 		if (hit.transform != null)
 		{
-			explosionDistance = (hit.distance + 1);
-			Debug.Log("hit tag " + hit.transform.tag);
+			explosionDistance = (hit.distance + 0.75f);
+
 			switch (hit.transform.tag)
 			{
 				// Kill a player when hitting it
@@ -112,7 +112,7 @@ public class Bomb : MonoBehaviour
 		}
 
 		// Spawn fire particles in that direction
-		Debug.Log("hit distance " + explosionDistance + " direction: " + direction);
+
 		for (int step = 1; step <= explosionDistance; step++)
 		{
 			Vector3 offsetPosition = new Vector3(direction.x, direction.y, 0) * step;
