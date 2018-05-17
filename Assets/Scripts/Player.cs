@@ -28,7 +28,9 @@ public class Player : MonoBehaviour
 
 
 	/// <summary>
-	/// Movement and bomb dropping code for this player.
+	/// Movement for this player. Whenever you do any kind of movement with Physics/Rigidbodies,
+	/// then ALWAYS use FixedUpdate! FixedUpdate is made to synchronise your movement with other
+	/// physics changes in the game.
 	/// </summary>
 	void FixedUpdate ()
 	{
@@ -40,8 +42,16 @@ public class Player : MonoBehaviour
 		
 		Vector2 movement = new Vector2(horizontalMovement, verticalMovement) * walkSpeed * Time.fixedDeltaTime;
 		rigid.MovePosition(rigid.position + movement);
+	}
 
-		// Dropping the bomb
+
+	/// <summary>
+	/// Bomb dropping for the player. Whenever you use GetKeyDown or GetKeyUp, ALWAYS use Update!
+	/// These functions will only be 'true' for one Update-frame, and may fail to always work in
+	/// FixedUpdate.
+	/// </summary>
+	void Update()
+	{
 		if (Input.GetKeyDown(bombKey))
 		{
 			// Align with grid
