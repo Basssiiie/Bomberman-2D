@@ -1,5 +1,5 @@
 # Bomberman-2D
-A base project for my Unity Game Development class for 1st year students. The objective for the 4rd semester is to expand on this project with new features with pair-programming.
+A base project for my Unity Game Development class for 1st year students. The objective for the 4th semester is to expand on this project with new features with pair-programming.
 
 This project will go private after the summer, so download it if you want to keep a copy.
 
