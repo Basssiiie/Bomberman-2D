@@ -52,6 +52,9 @@ public class Player : MonoBehaviour
 	/// </summary>
 	void Update()
 	{
+		if (isDead)
+			return;
+
 		if (Input.GetKeyDown(bombKey))
 		{
 			// Align with grid
